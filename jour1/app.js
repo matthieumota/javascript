@@ -81,3 +81,49 @@ const parsedFile = JSON.parse(`{
 }`)
 
 console.log(parsedFile, parsedFile.title)
+
+// Exercices
+let course = 'JavaScript'
+console.log(`On fait du ${course}`)
+
+for (let i = 10; i >= 1; i--) {
+    console.log(i)
+}
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for (let number of numbers) {
+    const rest = number % 2
+    if (rest === 0) {
+        console.log(number)
+    }
+}
+
+const developers = ['Pierre', 'Oscar', 'Matthieu']
+
+for (let developer of developers) {
+    console.log(developer)
+}
+
+// Créez un tableau d'objets représentant des étudiants avec les propriétés nom et note.
+const students = [
+    { name: 'Pierre', note: 10 },
+    { name: 'Oscar', note: 7 },
+    { name: 'Matthieu', note: 9 }
+]
+
+// Affichez chaque étudiant et sa note avec une boucle forEach.
+students.forEach(function (s) {
+    console.log(`${s.name} a la note ${s.note}`)
+})
+
+// Ajoutez un nouvel étudiant au tableau et affichez le tableau mis à jour.
+students.push({ name: 'Fiorella', note: 8 })
+
+// Calculez et affichez la moyenne des notes.
+let total = 0
+
+for (let student of students) {
+    total += student.note
+}
+
+console.log(`La moyenne est de ${total / students.length}`)
