@@ -76,3 +76,45 @@ console.log([1, 2, 3, 4, 5].monMap((n, i, a) => {
 
     return n * 2
 }))
+
+// Créez une fonction récursive factorielle qui calcule le produit des entiers positifs jusqu'à un certain nombre (par exemple, factorielle(5) renverra 5 * 4 * 3 * 2 * 1 = 120).
+const factorielle = (n) => n > 0 ? n * factorielle(n - 1) : 1
+
+console.log(factorielle(5)) // 120
+
+/*
+Imaginons un système pour gérer un compte bancaire. Le compte bancaire est représenté par un objet qui possède des propriétés et des méthodes pour effectuer des opérations financières comme les dépôts et les retraits. Nous utiliserons le mot-clé this pour accéder aux propriétés de l'objet à l'intérieur de ses méthodes.
+
+Crée un objet compteBancaire avec les caractéristiques suivantes :
+
+    propriétaire : le nom du titulaire du compte (par exemple "John Doe").
+    solde : le solde actuel du compte, initialisé à 0.
+    deposer(montant) : Cette méthode permet d'ajouter un montant au solde du compte. Si le montant est positif, il est ajouté au solde. Si le montant est négatif, un message d'erreur doit être affiché.
+    retirer(montant) : Cette méthode permet de retirer un montant du compte, à condition que le solde soit suffisant. Si le montant est positif et inférieur ou égal au solde, il est retiré du compte. Si le montant est supérieur au solde, un message d'erreur doit être affiché. Si le montant est négatif, un message d'erreur doit être affiché.
+*/
+
+const bankAccount = {
+    owner: 'Fiorella Mota',
+    balance: 0,
+    put(amount) {
+        if (amount > 0) {
+            this.balance += amount
+        } else {
+            console.error('Le montant doit être positif')
+        }
+    },
+    get(amount) {
+        if (amount > 0 && amount <= this.balance) {
+            this.balance -= amount
+        } else {
+            console.error('Le montant doit être positif et inférieur ou égal au solde')
+        }
+    }
+}
+
+bankAccount.put(100)
+bankAccount.get(50)
+bankAccount.put(300)
+bankAccount.get(200)
+
+console.log(bankAccount)

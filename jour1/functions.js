@@ -69,7 +69,7 @@ String.prototype.toLeetSpeak = function () {
 }
 
 console.log('Fiorella'.toLeetSpeak())
-console.log('Pierre'.toLeetSpeak())
+console.log('Pierre'.toLeetSpeak()) // P13rr3
 console.log('Oscar'.toLeetSpeak())
 
 // this
