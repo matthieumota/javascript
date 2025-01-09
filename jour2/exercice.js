@@ -24,10 +24,15 @@ setTimeout(() => {
 }, 2000)
 
 // Modifier un élément de la liste
-//listNormal.children[0].textContent = `${listNormal.children[0].textContent} modifié`
+listNormal.children[0].textContent = `${listNormal.children[0].textContent} modifié`
+
+const newLi2 = document.createElement('li')
+newLi2.classList.add('py-4')
+newLi2.textContent = `Elément remplacé`
+listNormal.replaceChild(newLi2, listNormal.children[2])
 
 // Supprimer un élément de la liste
-//listNormal.children[1].remove()
+listNormal.children[1].remove()
 
 
 
