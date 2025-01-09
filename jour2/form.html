@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries"></script>
+</head>
+<body>
+    <div class="max-w-xl mx-auto">
+        <form id="myForm">
+            <div class="mb-4">
+                <label for="name" class="block">Nom</label>
+                <input type="text" id="name" name="name" class="w-full rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block">Email</label>
+                <input type="text" id="email" name="email" class="w-full rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="message" class="block">Message</label>
+                <textarea id="message" name="message" class="w-full rounded-md"></textarea>
+            </div>
+
+            <button class="w-full bg-blue-500 hover:bg-blue-600 duration-200 text-white px-4 py-2 rounded-md">
+                Envoyer
+            </button>
+        </form>
+
+        <h2 class="mt-16">Validation mot de passe</h2>
+        <input type="password" id="password" name="password" class="w-full rounded-md">
+        <p id="error" class="text-red-500"></p>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>
