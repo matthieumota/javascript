@@ -55,3 +55,46 @@ button.addEventListener('click', () => {
     newP.textContent = new Date().getFullYear()
     parent.replaceChild(newP, parent.lastChild)
 })
+
+// Formulaire
+const form = document.getElementById('myForm')
+form.addEventListener('submit', (event) => {
+    event.preventDefault() // Annule le comportement par défaut du formulaire
+
+    const fields = form.elements // Les inputs du formulaire
+    const { name, confirmed } = form.elements // On peut destructurer l'objet
+
+    console.log(name, confirmed)
+
+    const errors = {}
+
+    if (!name.value) {
+        errors.name = 'Le nom est requis'
+    }
+
+    if (!confirmed.checked) {
+        errors.confirmed = 'Vous devez confirmer le formulaire'
+    }
+
+    const errorsElement = document.getElementById('errors')
+    errorsElement.textContent = ''
+
+    if (Object.keys(errors).length > 0) {
+        for (let error of Object.values(errors)) {
+            const p = document.createElement('p')
+            p.textContent = error
+            p.classList.add('text-red-500')
+            errorsElement.appendChild(p)
+        }
+
+        return
+    }
+
+    let success = `Bonjour ${name.value}, tu as confirmé le formulaire.`
+    const successElement = document.getElementById('success')
+    successElement.textContent = success
+
+    setTimeout(() => {
+        successElement.textContent = ''
+    }, 5000)
+})

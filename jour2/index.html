@@ -7,11 +7,32 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries"></script>
 </head>
 <body>
-    <div id="container" class="flex flex-col justify-center items-center h-screen">
+    <div id="container" class="flex flex-col justify-center items-center">
         <h1 class="text-3xl font-bold underline">Hello JavaScript</h1>
         <button id="my-button" class="bg-blue-500 hover:bg-blue-600 duration-200 text-white px-4 py-2 mt-5 rounded-md">
             0
         </button>
+    </div>
+
+    <div class="max-w-xl mx-auto">
+        <form id="myForm">
+            <div class="mb-4">
+                <label for="name" class="block">Nom</label>
+                <input type="text" id="name" name="name" class="w-full">
+            </div>
+
+            <div class="flex items-center gap-4 mb-4">
+                <input type="checkbox" id="confirmed" name="confirmed">
+                <label for="confirmed">Confirm</label>
+            </div>
+
+            <button class="w-full bg-blue-500 hover:bg-blue-600 duration-200 text-white px-4 py-2 rounded-md">
+                Envoyer
+            </button>
+        </form>
+
+        <div id="success"></div>
+        <div id="errors"></div>
     </div>
 
     <script src="app.js"></script>
