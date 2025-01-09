@@ -34,21 +34,33 @@ listNormal.replaceChild(newLi2, listNormal.children[2])
 // Supprimer un élément de la liste
 listNormal.children[1].remove()
 
+// Bonus simple et évident
+const listBonus = document.getElementById("ListeBonus")
+const button2 = document.getElementById("add_child")
 
+let num=3
+button2.addEventListener("click", () => {
+    const li = document.createElement("li")
+    li.textContent = "Bonus " + num
+    li.addEventListener('click', () => {
+        // li ou event.currentTarget c'est pareil
+        li.innerHTML = `${li.innerHTML} modifié`
+    })
+    num=num+1
+    listBonus.appendChild(li)
+})
 
+const lis = document.querySelectorAll('#ListeBonus li')
 
+for (let li of lis) {
+    li.addEventListener('click', () => {
+        // li ou event.currentTarget c'est pareil
+        li.innerHTML = `${li.innerHTML} modifié`
+    })
+}
 
-
-
-
-
-
-
-
-
-
-// Bonus
-/*const list = document.querySelector('#items-list')
+// Bonus compliqué et difficile
+const list = document.querySelector('#items-list')
 
 const createItem = () => {
     const newLi = document.createElement('li')
@@ -77,7 +89,6 @@ const createItem = () => {
             newLi.classList.remove('line-through')
         }
     })
-    newLi.appendChild(document.createTextNode('\n'))
     newLi.appendChild(newDeleteButton)
     list.appendChild(newLi)
 }
@@ -88,7 +99,7 @@ const editItem = (item) => {
 
 const refreshItemsLength = () => {
     document.querySelector('#items-length').textContent = list.children.length
-    document.querySelector('#completed-length').textContent = Array.from(list.children).filter(child => child.querySelector('input[type="checkbox"]').checked).length
+    document.querySelector('#completed-length').textContent = Array.from(list.children).filter(li => li.querySelector('input[type="checkbox"]').checked).length
 }
 
 const addItemAction = document.querySelector('#add-item-action')
@@ -110,7 +121,7 @@ for (let child of list.children) {
 
     const checkboxToggle = child.querySelector('input[type="checkbox"]')
     checkboxToggle.addEventListener('click', (event) => {
-        event.stopPropagation()
+        event.stopPropagation() // empêche la propagation du clic vers le parent (vers le li)
         const completed = event.currentTarget.checked
 
         if (completed) {
@@ -127,4 +138,4 @@ for (let child of list.children) {
     }
 }
 
-refreshItemsLength()*/
+refreshItemsLength()
