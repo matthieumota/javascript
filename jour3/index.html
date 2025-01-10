@@ -22,6 +22,13 @@
       <p id="loading" class="hidden">Chargement...</p>
       <ul id="todos"></ul>
       <p id="api-errors" class="text-red-500"></p>
+
+      <select id="products-limit"></select>
+      <div id="products-loading" class="flex justify-center py-20 hidden">
+        <div class="h-6 w-6 animate-spin rounded-full border-b-2 border-r-2 border-current"></div>
+      </div>
+      <div id="products" class="grid grid-cols-4 gap-8"></div>
+      <p id="products-error" class="text-red-500"></p>
     </div>
 
     <script type="module" src="/src/main.js"></script>
