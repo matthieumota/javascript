@@ -9,7 +9,7 @@ const counters = document.querySelectorAll('[data-counter]')
 counters.forEach(c => counter(c))
 
 // Promesse ajax avec le .then...
-fetchTodos()
+//fetchTodos()
 
 // Promesse ajax avec le async/await
 loadTodos() // Le load est asynchrone
