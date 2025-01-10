@@ -39,7 +39,7 @@ const renderProduct = (product) => {
             <p class="text-gray-600 font-bold text-2xl">${product.price} €</p>
             <p class="text-sm">${product.rating.rate} / 5 sur ${product.rating.count} avis</p>
         </div>
-        <div class="h-60 w-40 flex items-center">
+        <div class="h-80 w-40 flex items-center">
             <img class="w-full" src="${product.image}" alt="${product.title}">
         </div>
     </div>`
