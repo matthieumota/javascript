@@ -1,6 +1,6 @@
 
 const setupProducts = () => {
-    loadProducts(5)
+    loadProducts(6)
 
     const limitSelect = document.querySelector('#products-limit')
     limitSelect.innerHTML += [...Array(20).keys()].map(i =>
@@ -33,13 +33,15 @@ const toggleLoader = () => {
 
 const renderProduct = (product) => {
     return `<div class="bg-white rounded-md">
-        <h2 class="text-2xl font-bold">${product.title}</h2>
+        <h2 class="text-2xl font-bold">${truncate(product.title)}</h2>
         <p class="text-gray-600">${truncate(product.description)}</p>
         <div class="flex items-center justify-between">
             <p class="text-gray-600 font-bold text-2xl">${product.price} €</p>
             <p class="text-sm">${product.rating.rate} / 5 sur ${product.rating.count} avis</p>
         </div>
-        <img class="h-40 mx-auto" src="${product.image}" alt="${product.title}">
+        <div class="h-60 w-40 flex items-center">
+            <img class="w-full" src="${product.image}" alt="${product.title}">
+        </div>
     </div>`
 }
 
